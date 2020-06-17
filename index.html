@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="filmSearchCont">
+        <div class="container">
+            <h3>Search:</h3>
+            <div class="searchInst">
+                <div>
+                    <label>Title:</label>
+                    <input id="movieName" type="text" onkeydown="enterKey()" autofocus>
+                </div>
+                <div>
+                    <label>Type:</label>
+                    <select id="movieType">
+                        <option>Movie</option>
+                        <option>Series</option>
+                        <option>Episode</option>
+                    </select>
+                </div>
+                <button onclick="filmSearch()" id="searchButton">Search</button>
+            </div>
+            <pre id="notFound"></pre>
+        </div>
+
+        <div class="loader" id="loaderId" style="display: none;"></div>
+
+        <div class="findFilms" id="findFilmsId" style="display: none;">
+            <h3>Films:</h3>
+            <div class="filmsArray" id="filmArrayId"></div>
+            <div class="pageButton">
+                <button onclick="previousPage()"><<</button>
+                <button id="firstButton" onclick="pageChange()"></button>
+                <button id="secondButton" onclick="pageChange()"></button>
+                <button id="thirdButton" onclick="pageChange()"></button>
+                <button id="fourthButton" onclick="pageChange()"></button>
+                <button id="fifthButton" onclick="pageChange()"></button>
+                <button id="sixthButton" onclick="pageChange()"></button>
+                <button onclick="nextPage()">>></button>
+            </div>
+        </div>
+
+        <div class="detailsContainer" id="detailsContainerId" style="display: none;">
+            <h3>Film info:</h3>
+            <div class="filmDetail">
+                <img id="idPoster">
+                <div class="detailContainer">
+                    <div>
+                        <strong>Title:</strong>
+                        <label id="idTitle"></label>
+                    </div>
+                    <div>
+                        <strong>Released:</strong>
+                        <label id="idReleased"></label>
+                    </div>
+                    <div>
+                        <strong>Genre:</strong>
+                        <label id="idGenre"></label>
+                    </div>
+                    <div>
+                        <strong>Country:</strong>
+                        <label id="idCountry"></label>
+                    </div>
+                    <div>
+                        <strong>Director:</strong>
+                        <label id="idDirector"></label>
+                    </div>
+                    <div>
+                        <strong>Writer:</strong>
+                        <label id="idWriter"></label>
+                    </div>
+                    <div>
+                        <strong>Actors:</strong>
+                        <label id="idActors"></label>
+                    </div>
+                    <div>
+                        <strong>Awards:</strong>
+                        <label id="idAwards"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
